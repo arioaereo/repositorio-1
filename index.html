@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site educativo sobre corpo, identidade e sexualidade. Conteúdo científico, inclusivo e acessível.">
+  <title>Corpo, Identidade e Sexualidade — Educação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #faf9f7;
+  --bg-alt: #f7f0fa;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #5c5c5c;
+  --accent: #9B4FC0;
+  --accent-soft: #E2A9F1;
+  --accent-dark: #6B2D8B;
+  --border: #e8dcec;
+  --danger: #9b2c2c;
+  --success: #276749;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --max-width: 920px;
+  --header-h: 64px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+ul {
+  padding-left: 1.35rem;
+  margin: 0.75rem 0;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+.container {
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 247, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  height: var(--header-h);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.logo-icon {
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+.nav {
+  display: flex;
+  gap: 0.15rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-soft), transparent);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5.5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+}
+
+.btn-small:hover {
+  background: var(--accent-dark);
+}
+
+.intro-grid,
+.cards-3 {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 700px) {
+  .intro-grid,
+  .cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  color: var(--accent-dark);
+}
+
+.card p,
+.card ul {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.note {
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+}
+
+.note strong {
+  color: var(--text);
+}
+
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.info-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.highlight-box {
+  background: var(--accent-dark);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+}
+
+.highlight-box strong {
+  color: #E2A9F1;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accordion-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.accordion-header:hover {
+  background: var(--bg);
+}
+
+.accordion-icon {
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.accordion-item.is-open .accordion-content {
+  display: block;
+}
+
+.accordion-content p + p,
+.accordion-content p + ul {
+  margin-top: 0.75rem;
+}
+
+.defs-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .defs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.def-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+}
+
+.def-card h3 {
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+  margin-bottom: 0.5rem;
+}
+
+.def-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.tabs {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 0.9rem 1rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.tab-btn:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--surface);
+}
+
+.tabs-content {
+  padding: 1.5rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab-panel p,
+.tab-panel ul {
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.consent-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 650px) {
+  .consent-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.consent-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.consent-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-dark);
+}
+
+.consent-card ul {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.myth-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.myth-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.myth-question {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.myth-question:hover {
+  background: var(--bg);
+}
+
+.myth-label {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #fce8e8;
+  color: var(--danger);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.15rem;
+}
+
+.myth-toggle {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.myth-item.is-open .myth-toggle {
+  transform: rotate(180deg);
+}
+
+.myth-answer {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin: 0 1.25rem 0;
+}
+
+.myth-item.is-open .myth-answer {
+  display: block;
+}
+
+.fact-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #e6f4ea;
+  color: var(--success);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.myth-answer p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.quiz-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-q {
+  margin-bottom: 0.85rem;
+}
+
+.quiz-item label {
+  display: block;
+  padding: 0.45rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.quiz-item input {
+  margin-right: 0.5rem;
+}
+
+.quiz-feedback {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.quiz-feedback.correct {
+  background: #e6f4ea;
+  color: var(--success);
+}
+
+.quiz-feedback.incorrect {
+  background: #fce8e8;
+  color: var(--danger);
+}
+
+.resources-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 700px) {
+  .resources-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.resource-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.resource-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent-dark);
+}
+
+.resource-card ul {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  background: var(--accent-dark);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2.5rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #E2A9F1;
+}
+
+.footer-meta {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 0;
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.25s, opacity 0.25s, visibility 0.25s;
+    box-shadow: var(--shadow);
+  }
+
+  .nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav a {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+  </style>
+</head>
+<body>
+  <header class="header" id="topo">
+    <div class="container header-inner">
+      <a href="#topo" class="logo">
+        <span class="logo-icon" aria-hidden="true">◇</span>
+        <span>Corpo & Identidade</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="#introducao">Introdução</a>
+        <a href="#corpo">Corpo</a>
+        <a href="#identidade">Identidade</a>
+        <a href="#sexualidade">Sexualidade</a>
+        <a href="#consentimento">Consentimento</a>
+        <a href="#saude">Saúde</a>
+        <a href="#mitos">Mitos</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-badge">Educação · Ciência · Respeito</p>
+        <h1>Corpo, Identidade e Sexualidade</h1>
+        <p class="hero-subtitle">
+          Um guia educativo, detalhado e inclusivo para compreender o corpo humano,
+          a diversidade de identidades e a sexualidade de forma saudável, segura e baseada em evidências.
+        </p>
+        <div class="hero-actions">
+          <a href="#introducao" class="btn btn-primary">Começar</a>
+          <a href="#recursos" class="btn btn-outline">Recursos confiáveis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="introducao" class="section">
+      <div class="container">
+        <h2>Por que falar sobre isso?</h2>
+        <div class="intro-grid">
+          <div class="card">
+            <h3>Educação é proteção</h3>
+            <p>
+              Informações claras e científicas sobre corpo, identidade e sexualidade ajudam
+              a prevenir violência, infecções sexualmente transmissíveis (ISTs), gravidez não planejada
+              e sofrimento mental. A Organização Mundial da Saúde (OMS) e a UNESCO recomendam
+              educação sexual abrangente desde a infância, adaptada à faixa etária.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Diversidade é realidade</h3>
+            <p>
+              Corpos, identidades de gênero e orientações sexuais existem em um espectro amplo.
+              Compreender essa diversidade reduz preconceito, discriminação e estigma —
+              fatores que impactam diretamente a saúde física e mental das pessoas.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Autonomia e direitos</h3>
+            <p>
+              Conhecer o próprio corpo e os próprios direitos permite tomar decisões
+              informadas, estabelecer limites e buscar ajuda quando necessário.
+              Sexualidade envolve prazer, saúde, relações e direitos humanos.
+            </p>
+          </div>
+        </div>
+        <div class="note">
+          <strong>Importante:</strong> Este material é educativo e não substitui atendimento médico,
+          psicológico ou jurídico. Em caso de dúvida ou urgência, procure profissionais de saúde
+          ou serviços especializados (veja a seção <a href="#recursos">Recursos</a>).
+        </div>
+      </div>
+    </section>
+
+    <section id="corpo" class="section section-alt">
+      <div class="container">
+        <h2>O Corpo</h2>
+        <p class="section-lead">
+          O corpo humano é diverso em formas, tamanhos, funções e características.
+          Conhecer a anatomia e as mudanças ao longo da vida é base para autocuidado e respeito.
+        </p>
+
+        <div class="accordion" data-accordion>
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Anatomia básica e diversidade corporal</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                O corpo humano possui sistemas (reprodutor, endócrino, nervoso, etc.) que interagem
+                de forma complexa. Características sexuais primárias (órgãos genitais internos e externos)
+                e secundárias (pelos, voz, distribuição de gordura, mamas, etc.) variam amplamente
+                entre indivíduos — inclusive dentro do mesmo sexo biológico designado ao nascer.
+              </p>
+              <p>
+                <strong>Intersexo:</strong> algumas pessoas nascem com variações nas características
+                sexuais (cromossomos, hormônios, genitália) que não se encaixam perfeitamente
+                nas categorias binárias “macho” ou “fêmea”. Isso é uma variação natural da biologia
+                humana e não é uma patologia em si. Decisões sobre intervenções médicas em bebês
+                e crianças intersexo devem priorizar o bem-estar e, sempre que possível, o consentimento
+                informado da pessoa ao longo da vida.
+              </p>
+              <p>
+                Corpos também variam por idade, genética, nutrição, atividade física, condições
+                de saúde e deficiências. Não existe um “corpo ideal” único. A diversidade corporal
+                é a norma biológica e social.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Puberdade e mudanças ao longo da vida</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                A <strong>puberdade</strong> é o período de transição da infância para a vida adulta
+                sexualmente madura, geralmente entre 8–14 anos (pode variar). É impulsionada por
+                hormônios (estrogênio, testosterona, entre outros) e envolve:
+              </p>
+              <ul>
+                <li>Crescimento acelerado e mudanças na composição corporal</li>
+                <li>Desenvolvimento de características sexuais secundárias</li>
+                <li>Início da menstruação (menarca) ou da espermatogênese</li>
+                <li>Mudanças emocionais e cognitivas</li>
+              </ul>
+              <p>
+                Ao longo da vida adulta, o corpo continua mudando: ciclos menstruais, gravidez
+                e pós-parto, andropausa/menopausa, envelhecimento. Todas essas fases fazem parte
+                da fisiologia humana e merecem informação e cuidado adequados.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Imagem corporal e saúde mental</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                A <strong>imagem corporal</strong> é a percepção e os sentimentos que uma pessoa
+                tem em relação ao próprio corpo. Ela é influenciada por mídia, família, pares,
+                cultura e experiências pessoais. Insatisfação corporal intensa está associada
+                a transtornos alimentares, depressão, ansiedade e comportamentos de risco.
+              </p>
+              <p>
+                Estratégias saudáveis incluem: reduzir exposição a padrões irreais de beleza,
+                praticar movimento por prazer (não apenas por aparência), buscar apoio psicológico
+                quando a insatisfação causa sofrimento, e valorizar o corpo pelas suas funções
+                e capacidades, não só pela estética.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Autocuidado e respeito ao próprio corpo</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <ul>
+                <li>Higiene adequada (incluindo higiene íntima sem excessos que alterem o pH natural)</li>
+                <li>Alimentação equilibrada e sono regular</li>
+                <li>Atividade física adaptada às possibilidades de cada pessoa</li>
+                <li>Consultas médicas preventivas (ginecologia, urologia, clínica geral etc.)</li>
+                <li>Reconhecimento de sinais de alerta (dor, sangramento anormal, lesões, mudanças súbitas)</li>
+                <li>Direito de dizer “não” a qualquer toque ou procedimento não consentido</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="identidade" class="section">
+      <div class="container">
+        <h2>Identidade</h2>
+        <p class="section-lead">
+          Identidade envolve como nos percebemos e como somos reconhecidos no mundo.
+          Inclui identidade de gênero, orientação sexual, expressão de gênero e outros aspectos
+          da experiência humana.
+        </p>
+
+        <div class="defs-grid">
+          <article class="def-card">
+            <h3>Sexo designado ao nascer</h3>
+            <p>
+              Classificação geralmente feita com base em genitália, cromossomos e/ou hormônios
+              (masculino, feminino ou, em alguns casos, intersexo). É um dado biológico,
+              mas não determina sozinho a identidade de gênero da pessoa.
+            </p>
+          </article>
+          <article class="def-card">
+            <h3>Identidade de gênero</h3>
+            <p>
+              Experiência interna e individual de ser homem, mulher, ambos, nenhum ou outro
+              gênero. Pode coincidir com o sexo designado ao nascer (pessoa <strong>cisgênero</strong>)
+              ou não (pessoa <strong>transgênero</strong>). Algumas pessoas são <strong>não binárias</strong>
+              (não se identificam exclusivamente como homem ou mulher).
+            </p>
+          </article>
+          <article class="def-card">
+            <h3>Expressão de gênero</h3>
+            <p>
+              Como a pessoa manifesta o gênero por meio de roupas, cabelo, comportamento,
+              voz e outros elementos. A expressão pode variar e não define a identidade
+              nem a orientação sexual.
+            </p>
+          </article>
+          <article class="def-card">
+            <h3>Orientação sexual</h3>
+            <p>
+              Padrão duradouro de atração emocional, romântica e/ou sexual por pessoas
+              de determinado(s) gênero(s). Exemplos: heterossexual, homossexual (lésbica/gay),
+              bissexual, pansexual, assexual. A orientação é distinta da identidade de gênero.
+            </p>
+          </article>
+        </div>
+
+        <div class="info-box">
+          <h3>Pontos importantes sobre identidade</h3>
+          <ul>
+            <li>
+              Identidade de gênero e orientação sexual <strong>não são escolhas</strong> no sentido
+              de “decisão consciente”. São aspectos da experiência humana reconhecidos por
+              organizações de saúde (OMS, APA, WPATH, entre outras).
+            </li>
+            <li>
+              Pessoas trans e não binárias podem ou não buscar hormonização, cirurgias
+              ou mudanças de documentação. O caminho de cada pessoa é individual e deve
+              ser baseado em consentimento informado e acompanhamento profissional.
+            </li>
+            <li>
+              O respeito ao nome social e aos pronomes corretos reduz sofrimento psíquico
+              e é uma prática de dignidade básica.
+            </li>
+            <li>
+              Discriminação por identidade de gênero ou orientação sexual está associada
+              a maiores taxas de ansiedade, depressão e suicídio. Ambientes acolhedores
+              e leis de proteção são fatores de proteção à saúde.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sexualidade" class="section section-alt">
+      <div class="container">
+        <h2>Sexualidade</h2>
+        <p class="section-lead">
+          Sexualidade é uma dimensão central da vida humana. Envolve prazer, intimidade,
+          reprodução, saúde, direitos e relações. É influenciada por fatores biológicos,
+          psicológicos, sociais e culturais.
+        </p>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-1">Dimensões</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-2">Desenvolvimento</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-3">Relações</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-4">Prazer e corpo</button>
+          </div>
+          <div class="tabs-content">
+            <div class="tab-panel active" id="tab-1" role="tabpanel">
+              <h3>Dimensões da sexualidade</h3>
+              <p>Segundo a OMS, a sexualidade abrange:</p>
+              <ul>
+                <li><strong>Biológica:</strong> anatomia, fisiologia, hormônios, resposta sexual</li>
+                <li><strong>Psicológica:</strong> desejos, fantasias, autoestima, imagem corporal</li>
+                <li><strong>Social e cultural:</strong> normas, valores, leis, mídia, educação</li>
+                <li><strong>Relacional:</strong> intimidade, comunicação, vínculos afetivos</li>
+                <li><strong>Ética e direitos:</strong> autonomia, consentimento, igualdade, não discriminação</li>
+              </ul>
+            </div>
+            <div class="tab-panel" id="tab-2" role="tabpanel">
+              <h3>Desenvolvimento ao longo da vida</h3>
+              <p>
+                A sexualidade não começa na adolescência. Crianças exploram o corpo de forma
+                natural (curiosidade, masturbação infantil). Na adolescência, o desejo e a
+                atração se intensificam. Na vida adulta e na velhice, a sexualidade continua
+                presente, embora possa mudar em forma e intensidade.
+              </p>
+              <p>
+                Educação sexual adequada à idade ajuda a proteger crianças e adolescentes
+                de abuso, a reduzir comportamentos de risco e a promover relações mais
+                igualitárias e respeitosas.
+              </p>
+            </div>
+            <div class="tab-panel" id="tab-3" role="tabpanel">
+              <h3>Relações e comunicação</h3>
+              <p>
+                Relacionamentos saudáveis — sejam eles monogâmicos, não monogâmicos,
+                casuais ou de longo prazo — se baseiam em comunicação, respeito mútuo,
+                honestidade e consentimento contínuo. Expectativas, limites e desejos
+                devem ser conversados de forma clara.
+              </p>
+              <p>
+                Violência nas relações (física, sexual, psicológica, econômica) é um
+                problema de saúde pública. Ninguém deve permanecer em uma relação que
+                cause medo, humilhação ou dano. Há serviços de apoio (veja Recursos).
+              </p>
+            </div>
+            <div class="tab-panel" id="tab-4" role="tabpanel">
+              <h3>Prazer, corpo e diversidade</h3>
+              <p>
+                O prazer sexual é uma parte legítima da saúde sexual. A resposta sexual
+                humana (desejo, excitação, orgasmo, resolução) varia entre pessoas e ao
+                longo da vida. Não existe um “modelo único” de excitação ou orgasmo.
+              </p>
+              <p>
+                Masturbação, quando feita de forma segura e consentida (consigo mesmo),
+                é uma prática normal e pode ajudar no autoconhecimento. Práticas sexuais
+                entre pessoas adultas e capazes de consentir são variadas; o essencial
+                é segurança, higiene e respeito aos limites de todas as partes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consentimento" class="section">
+      <div class="container">
+        <h2>Consentimento</h2>
+        <p class="section-lead">
+          Consentimento é a base ética e legal de qualquer interação sexual ou íntima.
+          Sem consentimento livre, informado e contínuo, não há relação saudável —
+          há violação.
+        </p>
+
+        <div class="consent-grid">
+          <div class="consent-card">
+            <h3>O que é consentimento</h3>
+            <ul>
+              <li><strong>Livre:</strong> sem pressão, ameaça, manipulação ou coerção</li>
+              <li><strong>Informado:</strong> a pessoa sabe o que está aceitando</li>
+              <li><strong>Específico:</strong> vale para aquela ação, naquele momento</li>
+              <li><strong>Revogável:</strong> pode ser retirado a qualquer instante</li>
+              <li><strong>Entusiasmado:</strong> idealmente há vontade clara, não apenas “não disse não”</li>
+            </ul>
+          </div>
+          <div class="consent-card">
+            <h3>Quando NÃO há consentimento</h3>
+            <ul>
+              <li>Pessoa incapaz de consentir (sono, embriaguez intensa, inconsciência, idade legal)</li>
+              <li>Pressão, chantagem emocional ou ameaça</li>
+              <li>Surpresa ou continuidade após a pessoa dizer “não” ou demonstrar desconforto</li>
+              <li>Relação de poder abusiva (ex.: adulto–criança, hierarquia explorada)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            <strong>Regra prática:</strong> “Sim” só vale quando é livre e claro.
+            Silêncio, ausência de resistência ou “talvez” não são consentimento.
+            Perguntar e respeitar a resposta é parte do cuidado mútuo.
+          </p>
+        </div>
+
+        <div class="note">
+          <strong>Legislação (Brasil):</strong> o Estatuto da Criança e do Adolescente
+          e o Código Penal estabelecem idade mínima e tipificam crimes sexuais.
+          Qualquer dúvida jurídica deve ser esclarecida com profissionais do direito
+          ou órgãos oficiais de proteção.
+        </div>
+      </div>
+    </section>
+
+    <section id="saude" class="section section-alt">
+      <div class="container">
+        <h2>Saúde sexual e reprodutiva</h2>
+        <p class="section-lead">
+          Saúde sexual é o estado de bem-estar físico, emocional, mental e social
+          em relação à sexualidade. Não é apenas a ausência de doença.
+        </p>
+
+        <div class="cards-3">
+          <div class="card">
+            <h3>Prevenção de ISTs</h3>
+            <p>
+              Infecções sexualmente transmissíveis (HIV, sífilis, gonorreia, clamídia,
+              HPV, herpes, hepatites etc.) podem ser prevenidas com:
+            </p>
+            <ul>
+              <li>Uso correto e consistente de preservativo (externo ou interno)</li>
+              <li>Vacinação (HPV, hepatite B)</li>
+              <li>Testagem regular e tratamento quando indicado</li>
+              <li>Profilaxia pré-exposição (PrEP) e pós-exposição (PEP) para HIV, quando prescritas</li>
+              <li>Comunicação aberta com parceiros(as) sobre status e práticas</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Anticoncepção</h3>
+            <p>
+              Métodos contraceptivos incluem preservativos, pílula, DIU, implante,
+              injeção, laqueadura, vasectomia, entre outros. A escolha deve ser
+              individual, informada e acompanhada por profissional de saúde.
+            </p>
+            <p>
+              O preservativo é o único método que previne ao mesmo tempo gravidez
+              e a maioria das ISTs. Métodos de emergência (pílula do dia seguinte)
+              existem e devem ser usados conforme orientação.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Cuidados de rotina</h3>
+            <ul>
+              <li>Consultas ginecológicas / urológicas periódicas</li>
+              <li>Exame de Papanicolau e rastreamento de câncer conforme indicação</li>
+              <li>Autocuidado e atenção a sintomas (corrimento, dor, feridas, alterações)</li>
+              <li>Acesso a informações e serviços sem julgamento</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mitos" class="section">
+      <div class="container">
+        <h2>Mitos × Fatos</h2>
+        <p class="section-lead">Desconstruindo crenças comuns com base em evidências.</p>
+
+        <div class="myth-list" data-myths>
+          <div class="myth-item">
+            <button class="myth-question" aria-expanded="false">
+              <span class="myth-label">Mito</span>
+              <span>“Orientação sexual e identidade de gênero são modismos ou escolha.”</span>
+              <span class="myth-toggle">▼</span>
+            </button>
+            <div class="myth-answer">
+              <span class="fact-label">Fato</span>
+              <p>
+                Organizações científicas (OMS, Associação Americana de Psicologia, entre outras)
+                reconhecem a diversidade de orientações e identidades como parte da variação
+                humana. Tentativas de “mudar” orientação ou identidade (as chamadas “terapias
+                de conversão”) são ineficazes e potencialmente prejudiciais, e são condenadas
+                por diversas entidades de saúde.
+              </p>
+            </div>
+          </div>
+
+          <div class="myth-item">
+            <button class="myth-question" aria-expanded="false">
+              <span class="myth-label">Mito</span>
+              <span>“Educação sexual estimula a iniciação sexual precoce.”</span>
+              <span class="myth-toggle">▼</span>
+            </button>
+            <div class="myth-answer">
+              <span class="fact-label">Fato</span>
+              <p>
+                Revisões sistemáticas e orientações da UNESCO e OMS indicam que educação
+                sexual abrangente tende a atrasar a iniciação sexual, aumentar o uso de
+                proteção e reduzir gravidez na adolescência e ISTs — quando bem implementada
+                e adaptada à idade.
+              </p>
+            </div>
+          </div>
+
+          <div class="myth-item">
+            <button class="myth-question" aria-expanded="false">
+              <span class="myth-label">Mito</span>
+              <span>“Só se pega IST se houver muitos parceiros ou se a pessoa ‘parecer’ de risco.”</span>
+              <span class="myth-toggle">▼</span>
+            </button>
+            <div class="myth-answer">
+              <span class="fact-label">Fato</span>
+              <p>
+                Qualquer pessoa sexualmente ativa pode adquirir uma IST. Aparência, número
+                de parceiros ou orientação não determinam sozinhos o risco. O que reduz o
+                risco são práticas de prevenção, testagem e tratamento.
+              </p>
+            </div>
+          </div>
+
+          <div class="myth-item">
+            <button class="myth-question" aria-expanded="false">
+              <span class="myth-label">Mito</span>
+              <span>“Consentimento é só no começo; depois não precisa mais perguntar.”</span>
+              <span class="myth-toggle">▼</span>
+            </button>
+            <div class="myth-answer">
+              <span class="fact-label">Fato</span>
+              <p>
+                Consentimento é contínuo. A pessoa pode mudar de ideia a qualquer momento.
+                Continuar após o “não” (verbal ou não verbal claro) configura violação.
+              </p>
+            </div>
+          </div>
+
+          <div class="myth-item">
+            <button class="myth-question" aria-expanded="false">
+              <span class="myth-label">Mito</span>
+              <span>“Pessoas com deficiência não têm sexualidade.”</span>
+              <span class="myth-toggle">▼</span>
+            </button>
+            <div class="myth-answer">
+              <span class="fact-label">Fato</span>
+              <p>
+                Pessoas com deficiência têm direito à sexualidade, à informação e ao
+                respeito. Acessibilidade, comunicação adaptada e combate ao capacitismo
+                são fundamentais para que esse direito seja exercido com segurança e autonomia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="section section-alt">
+      <div class="container">
+        <h2>Teste seus conhecimentos</h2>
+        <p class="section-lead">Perguntas rápidas para reforçar o que foi apresentado. Respostas ao final de cada questão.</p>
+
+        <div class="quiz" id="quizContainer">
+          <div class="quiz-item" data-correct="b">
+            <p class="quiz-q"><strong>1.</strong> Consentimento deve ser:</p>
+            <label><input type="radio" name="q1" value="a"> Apenas no início da relação sexual</label>
+            <label><input type="radio" name="q1" value="b"> Livre, informado, específico e revogável a qualquer momento</label>
+            <label><input type="radio" name="q1" value="c"> Implícito se a pessoa não disser “não”</label>
+            <button class="btn btn-small quiz-check">Verificar</button>
+            <p class="quiz-feedback" hidden></p>
+          </div>
+
+          <div class="quiz-item" data-correct="c">
+            <p class="quiz-q"><strong>2.</strong> Identidade de gênero e orientação sexual são:</p>
+            <label><input type="radio" name="q2" value="a"> A mesma coisa</label>
+            <label><input type="radio" name="q2" value="b"> Escolhas conscientes que se mudam facilmente</label>
+            <label><input type="radio" name="q2" value="c"> Aspectos distintos da experiência humana, reconhecidos por organizações de saúde</label>
+            <button class="btn btn-small quiz-check">Verificar</button>
+            <p class="quiz-feedback" hidden></p>
+          </div>
+
+          <div class="quiz-item" data-correct="a">
+            <p class="quiz-q"><strong>3.</strong> O preservativo:</p>
+            <label><input type="radio" name="q3" value="a"> Ajuda a prevenir gravidez e a maioria das ISTs quando usado corretamente</label>
+            <label><input type="radio" name="q3" value="b"> Só previne gravidez</label>
+            <label><input type="radio" name="q3" value="c"> É desnecessário se os parceiros se conhecem bem</label>
+            <button class="btn btn-small quiz-check">Verificar</button>
+            <p class="quiz-feedback" hidden></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="section">
+      <div class="container">
+        <h2>Recursos e onde buscar ajuda</h2>
+        <p class="section-lead">
+          Informações confiáveis e canais de apoio. Em emergência, ligue para os números oficiais.
+        </p>
+
+        <div class="resources-grid">
+          <div class="resource-card">
+            <h3>Brasil — canais de ajuda</h3>
+            <ul>
+              <li><strong>Disque 100</strong> — Direitos Humanos (violência, discriminação)</li>
+              <li><strong>Ligue 180</strong> — Central de Atendimento à Mulher</li>
+              <li><strong>CVV 188</strong> — Centro de Valorização da Vida (apoio emocional, 24h)</li>
+              <li><strong>Disque 190</strong> — Polícia Militar (emergência)</li>
+              <li>Serviços de saúde do SUS (UBS, CTA — Centro de Testagem e Aconselhamento)</li>
+            </ul>
+          </div>
+          <div class="resource-card">
+            <h3>Organizações e referências</h3>
+            <ul>
+              <li>Organização Mundial da Saúde (OMS) — saúde sexual e direitos</li>
+              <li>UNESCO — orientações sobre educação sexual abrangente</li>
+              <li>Ministério da Saúde (Brasil) — protocolos de ISTs, HIV, saúde da mulher e da população LGBTQIA+</li>
+              <li>Sociedades científicas de ginecologia, urologia, infectologia e psicologia</li>
+            </ul>
+          </div>
+          <div class="resource-card">
+            <h3>Quando procurar ajuda profissional</h3>
+            <ul>
+              <li>Dúvidas sobre corpo, desenvolvimento ou sexualidade</li>
+              <li>Sintomas genitais, menstruais ou sexuais que causem preocupação</li>
+              <li>Sofrimento com imagem corporal, identidade ou orientação</li>
+              <li>Situações de violência, abuso ou coerção</li>
+              <li>Necessidade de anticoncepção, PrEP, PEP ou testagem</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note">
+          Este site é material educativo. Não realiza diagnóstico, tratamento ou aconselhamento
+          individual. Em caso de urgência médica ou de segurança, procure o serviço de saúde
+          ou a autoridade competente mais próxima.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Conteúdo educativo sobre corpo, identidade e sexualidade.
+        Baseado em princípios de saúde pública, direitos humanos e evidências científicas.
+      </p>
+      <p class="footer-meta">
+        Atualizado para fins educacionais · Use com responsabilidade · 
+        <a href="#topo">Voltar ao topo</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  "use strict";
+
+  const navToggle = document.getElementById("navToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Abrir menu");
+      });
+    });
+  }
+
+  document.querySelectorAll("[data-accordion]").forEach((accordion) => {
+    accordion.querySelectorAll(".accordion-header").forEach((header) => {
+      header.addEventListener("click", () => {
+        const item = header.closest(".accordion-item");
+        const wasOpen = item.classList.contains("is-open");
+
+        accordion.querySelectorAll(".accordion-item").forEach((el) => {
+          el.classList.remove("is-open");
+          el.querySelector(".accordion-header")?.setAttribute("aria-expanded", "false");
+        });
+
+        if (!wasOpen) {
+          item.classList.add("is-open");
+          header.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-tabs]").forEach((tabsRoot) => {
+    const buttons = tabsRoot.querySelectorAll(".tab-btn");
+    const panels = tabsRoot.querySelectorAll(".tab-panel");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-tab");
+
+        buttons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+        });
+        panels.forEach((p) => p.classList.remove("active"));
+
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        const panel = tabsRoot.querySelector("#" + targetId);
+        if (panel) panel.classList.add("active");
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-myths] .myth-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".myth-item");
+      const isOpen = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
+  document.querySelectorAll(".quiz-item").forEach((item) => {
+    const checkBtn = item.querySelector(".quiz-check");
+    const feedback = item.querySelector(".quiz-feedback");
+    const correct = item.getAttribute("data-correct");
+
+    if (!checkBtn || !feedback) return;
+
+    checkBtn.addEventListener("click", () => {
+      const selected = item.querySelector('input[type="radio"]:checked');
+
+      if (!selected) {
+        feedback.hidden = false;
+        feedback.className = "quiz-feedback incorrect";
+        feedback.textContent = "Selecione uma opção antes de verificar.";
+        return;
+      }
+
+      feedback.hidden = false;
+      if (selected.value === correct) {
+        feedback.className = "quiz-feedback correct";
+        feedback.textContent = "Correto! Bom domínio do conteúdo.";
+      } else {
+        feedback.className = "quiz-feedback incorrect";
+        feedback.textContent =
+          "Não é essa a resposta. Revise a seção correspondente e tente de novo.";
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll("main section[id]");
+  const navLinks = document.querySelectorAll(".nav a");
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 100;
+    let current = "";
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollY >= top && scrollY < top + height) {
+        current = section.getAttribute("id") || "";
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.style.fontWeight = "";
+      if (current && link.getAttribute("href") === "#" + current) {
+        link.style.fontWeight = "700";
+        link.style.color = "var(--accent)";
+      } else {
+        link.style.color = "";
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  updateActiveNav();
+})();
+  </script>
+</body>
+</html>
